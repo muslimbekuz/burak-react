@@ -26,14 +26,6 @@ export interface Order {
   memberId: string;
   createdAt: Date;
   updatedAt: Date;
-}
-
-export interface OrderUpdateInput {
-  orderId: string;
-  orderStatus: OrderStatus;
-}
-
-export interface OrderWithDetails extends Order {
   //* from aggregation
   orderItems: OrderItem[];
   productData: Product[];
@@ -42,5 +34,10 @@ export interface OrderWithDetails extends Order {
 export interface OrderInquiry {
   page: number;
   limit: number;
+  orderStatus: OrderStatus;
+}
+
+export interface OrderUpdateInput {
+  orderId: string;
   orderStatus: OrderStatus;
 }
